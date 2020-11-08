@@ -2,11 +2,11 @@ import styled from "styled-components/macro";
 
 export const Container = styled.div`
   display: flex;
-  felx-direction: center;
   max-width: 950px;
   justify-content: center;
   height: 100%;
-  margin: 20px auto;
+  margin: 10px auto;
+  padding: 0 20px;
   flex-wrap: wrap;
 
   @media (max-width: 1000px) {
@@ -44,7 +44,7 @@ export const Button = styled.button`
     font-size: 16px;
     margin-top: 20px;
     font-weight: bold;
-    padding: 10px 30px;
+    padding: 14px 30px;
   }
 
   img {
