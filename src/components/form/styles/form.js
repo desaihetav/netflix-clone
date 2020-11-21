@@ -74,6 +74,10 @@ export const Input = styled.input`
   &:last-of-type {
     margin-bottom: 30px;
   }
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const Submit = styled.button`
@@ -88,5 +92,8 @@ export const Submit = styled.button`
   cursor: pointer;
   &:disabled {
     opacity: 0.5;
+  }
+  &:focus {
+    outline: none;
   }
 `;
