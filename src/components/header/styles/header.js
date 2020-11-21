@@ -37,10 +37,11 @@ export const Container = styled.div`
 `;
 
 export const Feature = styled(Container)`
-  padding: 150px 0 500px 0;
+  padding: 100px 0 500px 0;
   flex-direction: column;
   align-items: normal;
   width: 40%;
+  height: 10vh;
 
   @media (max-width: 1100px) {
     display: none;
@@ -79,7 +80,7 @@ export const ButtonLink = styled(ReactRouterLink)`
 
 export const Text = styled.p`
   color: white;
-  font-size: 22px;
+  font-size: 18px;
   line-height: normal;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
 `;
@@ -103,7 +104,7 @@ export const Link = styled.p`
 
 export const FeatureCallOut = styled.p`
   color: white;
-  font-size: 50px;
+  font-size: 44px;
   font-weight: bold;
   line-height: normal;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
