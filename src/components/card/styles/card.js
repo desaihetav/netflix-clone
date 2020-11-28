@@ -22,6 +22,11 @@ export const Container = styled.div`
   &:last-of-type {
     margin-bottom: 0;
   }
+  &:first-of-type {
+    @media (max-width: 600px) {
+      padding-top: 20px;
+    }
+  }
 `;
 
 export const Group = styled.div`
@@ -30,9 +35,10 @@ export const Group = styled.div`
     flexDirection === "row" ? "row" : "column"};
   ${({ alignItems }) => alignItems && `align-items: ${alignItems}`};
   ${({ margin }) => margin && `margin: ${margin}`};
+
   > ${Container}:first-of-type {
-    @media (min-width: 1100px) {
-      margin-top: -150px;
+    @media (min-width: 1000px) {
+      margin-top: -20vh;
     }
   }
 `;
@@ -58,8 +64,13 @@ export const Text = styled.p`
 `;
 
 export const Entities = styled.div`
+  position: relative;
   display: flex;
   flex-direction: row;
+
+  @media (max-width: 1200px) {
+    overflow-x: auto;
+  }
 `;
 
 export const Meta = styled.div`
@@ -73,7 +84,7 @@ export const Meta = styled.div`
 export const Image = styled.img`
   border: 0;
   width: 100%;
-  max-width: 305px;
+  min-width: 220px;
   cursor: pointer;
   height: auto;
   padding: 0;
@@ -87,14 +98,15 @@ export const Item = styled.div`
   position: relative;
   cursor: pointer;
   transition: transform 0.2s;
-  &:hover {
-    transform: scale(1.3);
-    z-index: 99;
-  }
+
   @media (min-width: 1200px) {
     &:hover ${Meta}, &:hover ${Text}, &:hover ${SubTitle} {
       display: block;
       z-index: 100;
+    }
+    &:hover {
+      transform: scale(1.3);
+      z-index: 99;
     }
   }
   &:first-of-type {
@@ -129,12 +141,12 @@ export const Feature = styled.div`
   background-size: contain;
   position: relative;
   height: 360px;
+  min-height: 360px;
   background-position-x: right;
+  background-position-y: bottom;
   background-repeat: no-repeat;
   background-color: black;
   @media (max-width: 1000px) {
-    height: auto;
-    background-size: auto;
     ${Title} {
       font-size: 20px;
       line-height: 20px;

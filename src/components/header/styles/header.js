@@ -8,11 +8,13 @@ export const Background = styled.div`
       src ? `../images/misc/${src}.jpg` : "../images/misc/home-bg.jpg"})
     center / cover no-repeat;
 
-  @media (max-width: 1100px) {
-    ${({ dontShowOnSmallViewPort }) =>
-      dontShowOnSmallViewPort && `background: none;`}
+  @media (max-width: 600px) {
+    width: 100vw;
+    height: auto;
   }
 `;
+// ${({ dontShowOnSmallViewPort }) =>
+//       dontShowOnSmallViewPort && `background: none;`}
 
 export const Group = styled.div`
   display: flex;
@@ -37,14 +39,81 @@ export const Container = styled.div`
 `;
 
 export const Feature = styled(Container)`
-  padding: 100px 0 500px 0;
   flex-direction: column;
   align-items: normal;
+  justify-content: center;
   width: 40%;
-  height: 10vh;
+  height: 80vh;
 
-  @media (max-width: 1100px) {
-    display: none;
+  @media (max-width: 1000px) {
+    width: 80%;
+    align-items: normal;
+    height: 60vh;
+  }
+`;
+
+export const FeatureCallOut = styled.p`
+  color: white;
+  font-size: 44px;
+  font-weight: bold;
+  line-height: normal;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+  margin-bottom: 0;
+  margin-top: -30vh;
+
+  @media (max-width: 1000px) {
+    font-size: 2rem;
+    margin-top: auto;
+  }
+`;
+
+export const Text = styled.p`
+  color: white;
+  font-size: 18px;
+  line-height: normal;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+  color: d5d5d5;
+
+  @media (max-width: 600px) {
+    font-size: 1rem;
+  }
+`;
+
+export const ButtonBar = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const PlayButton = styled.button`
+  box-shadow: 0 0.6vw 1vw -0.4vw rgba(0, 0, 0, 0.35);
+  background-color: #e6e6e6;
+  color: #000;
+  border-width: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  max-width: 130px;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.25s ease;
+
+  &:hover {
+    background-color: white;
+  }
+
+  @media (max-width: 600px) {
+    bottom: 0;
+  }
+`;
+
+export const MoreButton = styled(PlayButton)`
+  margin-left: 20px;
+  color: #e6e6e6;
+  background-color: rgba(109, 109, 110, 0.7);
+
+  &:hover {
+    background-color: rgba(109, 109, 110, 0.4);
   }
 `;
 
@@ -78,13 +147,6 @@ export const ButtonLink = styled(ReactRouterLink)`
   }
 `;
 
-export const Text = styled.p`
-  color: white;
-  font-size: 18px;
-  line-height: normal;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
-`;
-
 export const Link = styled.p`
   color: ${({ active }) => (active === "true" ? "white" : "#e5e5e5")};
   text-decoration: none;
@@ -100,15 +162,6 @@ export const Link = styled.p`
   &:last-of-type {
     margin-right: 0;
   }
-`;
-
-export const FeatureCallOut = styled.p`
-  color: white;
-  font-size: 44px;
-  font-weight: bold;
-  line-height: normal;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
-  margin-bottom: 0;
 `;
 
 export const Picture = styled.button`
@@ -226,24 +279,5 @@ export const Profile = styled.div`
   &:hover > ${Dropdown}{
     display: flex;
     flex-direction: column;
-  }
-`;
-
-export const PlayButton = styled.button`
-  box-shadow: 0 0.6vw 1vw -0.4vw rgba(0, 0, 0, 0.35);
-  background-color: #e6e6e6;
-  color: #000;
-  border-width: 0;
-  padding: 10px 20px;
-  border-radius: 5px;
-  max-width: 130px;
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 10px;
-  cursor: pointer;
-  transition: 0.25s ease;
-
-  &:hover {
-    background-color: white;
   }
 `;
