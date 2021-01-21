@@ -102,7 +102,11 @@ Header.Profile = function HeaderProfile({ children, ...restProps }) {
 };
 
 Header.ButtonLink = function HeaderButtonLink({ children, ...restProps }) {
-  return <ButtonLink {...restProps}>{children}</ButtonLink>;
+  return (
+    <ButtonLink id="sign_in_button" {...restProps}>
+      {children}
+    </ButtonLink>
+  );
 };
 
 Header.Logo = function HeaderLogo({ to, ...restProps }) {
